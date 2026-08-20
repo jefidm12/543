@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #050A14;
+    --card-dark: #07111F;
+    --card-surface: #0B192E;
+    --border-dark: #16263D;
+    --primary-blue: #1677FF;
+    --accent-blue: #258BFF;
+  }
+
+  body {
+    background-color: #050A14;
+    color: #F1F5F9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(37, 139, 255, 0.4);
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Gold Medallion 3D Spin & Aura Animations */
+@keyframes spin3d {
+  0% {
+    transform: perspective(700px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(700px) rotateY(360deg);
+  }
+}
+
+@keyframes goldRaysRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.08);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes goldFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-spin-3d {
+  animation: spin3d 4.5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.animate-gold-rays {
+  animation: goldRaysRotate 12s linear infinite;
+}
+
+.animate-gold-float {
+  animation: goldFloat 3s ease-in-out infinite;
+}
+
+/* Profile Effects Keyframes */
+@keyframes waterSwirl {
+  0% {
+    transform: rotate(0deg) scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+    opacity: 0.95;
+  }
+  100% {
+    transform: rotate(360deg) scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-80px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fallPetals {
+  0% {
+    transform: translateY(-20px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(120px) translateX(25px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cyberPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4), inset 0 0 15px rgba(236, 72, 153, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.6), inset 0 0 25px rgba(6, 182, 212, 0.5);
+  }
+}
+
+.animate-water-swirl {
+  animation: waterSwirl 8s linear infinite;
+}
+
+.animate-cyber-pulse {
+  animation: cyberPulse 2.5s ease-in-out infinite;
+}
+
